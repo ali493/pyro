@@ -275,7 +275,7 @@ class SlidingModeController( ComputedTorqueController ):
                 
         u_computed      = self.model.actuator_forces( q , dq , ddq_r )
         
-        u_discontinuous = np.dot( self.K( q , t ) ,  np.sign( s ) )
+        u_discontinuous = np.dot( self.K( q , t ) ,  np.atan( s ) )
         
         u_tot = u_computed - u_discontinuous
         
